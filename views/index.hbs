@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{> headConf}}
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>{{titulo}}</title>
 </head>
+
 <body>
     {{> navbar}}
 
-    <div class="jumbotron">
-                <h1 class="display-4">Hola Tu !</h1>
-                <p class="lead">Esta es una simple página de información de Jean Karlo Obando Ramos.</p>
-                <hr class="my-4">
-                <p>Si quieres saber más de este proyecto, te invito a que me sigas en mis redes sociales.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-              </div>
+    <div id="title">
+        <p>Escriba el correo que desea enviar, y esta se enviara a los usuarios presentas en la lista</p>
+    </div>
+
+    <div class="row" id="cuerpo">
+        <div class="col-sm-6">
+
+            <div id="correo" class="border border-success rounded">
+                <h3>Escribir Correo</h3>
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" class="form-control" id="txtAsunto">
+                </div>
+
+                <div class="form-group">
+                    <label for="textoCorreo">Texto Correo:</label>
+                    <textarea class="form-control" rows="5" id="txtTextoCorreo"></textarea>
+                </div>
+                <button type="button" class="btn btn-success">Enviar Correo</button>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div id="listaCorreos">
+
+                <h3>Lista de Correos Registrados</h3>
+
+                    <div class="table-wrapper-scroll-y">
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                </tr>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
 
     {{> footer}}
 </body>
+
 </html>

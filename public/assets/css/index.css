@@ -1,0 +1,26 @@
+html{
+    font-size: 15px;
+}
+
+#title{
+    font-size: 1.5rem;
+    margin: 1rem
+}
+
+#correo{
+    margin: 2.5rem 1rem;
+    padding: 1rem 1rem;
+}
+
+#listaCorreos{
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  
