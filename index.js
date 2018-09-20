@@ -1,7 +1,6 @@
 require('./config')
 
 const express = require('express');
-const nodemailer = require('nodemailer');
 const hbs = require('hbs');
 const path = require('path');
 const mongoose = require('mongoose')

@@ -1,6 +1,8 @@
 const express = require('express');
 const _ = require('underscore');
 
+const {enviarCorreo} = require('../nodemail')
+
 const app = express()
 
 const Usuario = require('../models/usuario')
@@ -89,6 +91,25 @@ app.get('/api/usuarios/correos',(req, res) => {
                     }) 
             })  
 });
+
+
+/**
+ * Enviar correo 
+ */
+app.post('/api/enviarCorreo',async (req, res) => {
+
+    let correo = req.body;
+    
+
+    let respuestaEnvio = await enviarCorreo(correo.destinatarios,correo.asunto,correo.texto);
+    
+    console.log(respuestaEnvio);
+    res.json({
+        message:"Algo se hizo"
+    })
+
+});
+
 
 
 module.exports = app;
