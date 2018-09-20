@@ -1,0 +1,17 @@
+html{
+    font-size: 15px;
+}
+
+
+#title{
+    font-size: 2rem;
+    padding-left: 1rem;
+    margin-top: 1rem; 
+}
+
+#form-registro{
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    border: 0.5rem;
+}
+
