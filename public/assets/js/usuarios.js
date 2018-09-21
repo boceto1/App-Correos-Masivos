@@ -6,10 +6,13 @@ $.get("/api/usuarios/correos", function (data, status) {
         usuarios = data.correos
 
         usuarios.forEach(correo => {
-            $("#listaCorreos").append(`<tr><td>${correo}</td><td>aqui va ir un boton</td></tr>`); 
+            $("tbody").append(`
+            <tr><td>${correo}</td>
+            <td><button type="button" class="btn btn-default">Deshabilitar</button></td>
+            </tr>
+            `); 
         });
 
 
     }
-    console.log(usuarios);
 });

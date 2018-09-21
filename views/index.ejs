@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{> headConf}}
+    <% include parciales/headConf %>
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="assets/js/usuarios.js"></script>
-    <title>{{titulo}}</title>
+    <title><%=titulo%></title>
 </head>
 
 <body>
-    {{> navbar}}
+        <% include parciales/navbar %>
 
     <div id="title">
         <p>Escriba el correo que desea enviar, y esta se enviara a los usuarios presentas en la lista</p>
@@ -32,7 +32,7 @@
                     <label for="textoCorreo">Texto Correo:</label>
                     <textarea class="form-control" rows="5" id="txtTextoCorreo"></textarea>
                 </div>
-                <button type="button" class="btn btn-success">Enviar Correo</button>
+                <button type="button" class="btn btn-success" onclick="enviarCorreo ()">Enviar Correo</button>
             </div>
 
         </div>
@@ -51,36 +51,8 @@
                                     <th scope="col">Opciones</th>
                                 </tr>
                             </thead>
-                            <tbody id="listaCorreos">
-
-                            </tbody>
-
-{{!--                             <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                </tr>
-                            </tbody> --}}
+                          <tbody>
+                            </tbody> 
                         </table>
 
                     </div>
@@ -89,7 +61,7 @@
         </div>
     </div>
 
-    {{> footer}}
+    <% include parciales/footer %>
 </body>
 
 </html>

@@ -96,17 +96,16 @@ app.get('/api/usuarios/correos',(req, res) => {
 /**
  * Enviar correo 
  */
-app.post('/api/enviarCorreo',async (req, res) => {
+app.post('/api/enviarCorreo', (req, res) => {
 
     let correo = req.body;
-    
-
-    let respuestaEnvio = await enviarCorreo(correo.destinatarios,correo.asunto,correo.texto);
-    
-    res.json({
-        ok:true,
-        message:"Proceso realizado con éxito"
-    })
+    enviarCorreo(correo.destinatarios,correo.asunto,correo.texto)
+                .then(()=>{
+                    res.json({
+                        ok:true,
+                        message:"Proceso realizado con éxito"
+                    })
+                });
 
 });
 

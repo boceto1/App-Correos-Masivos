@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{> headConf}}
+    <% include parciales/headConf %>
+
     <link rel="stylesheet" href="assets/css/registro.css">
-    <title>{{titulo}}</title>
+    <title><%=titulo%></title>
 </head>
 
 <body>
-    {{> navbar}}
+        <% include parciales/navbar %>
 
     <div id="title">
         <p>Registre el nombre y el correo</p>
@@ -28,12 +29,13 @@
                 <input type="email" class="form-control" id="txtEmail" name="email" placeholder="Ingrese Email">
             </div>
             <button type="button" class="btn btn-success" onclick="registrarUsuario()">Registrar</button>
-            <button type="button" class="btn btn-primary" onclick="limpiarCampos()">Limpiar</button>
+            <button type="button" class="btn btn-primary" onclick='limpiarCampos(["txtNombre","txtEmail"])'>Limpiar</button>
         </form>
 
     </div>
 
-    {{> footer}}
+    <% include parciales/footer %>
+    
 </body>
 
 </html>

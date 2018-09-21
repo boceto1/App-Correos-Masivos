@@ -1,7 +1,6 @@
 require('./config')
 
 const express = require('express');
-const hbs = require('hbs');
 const path = require('path');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -20,8 +19,8 @@ app.use(express.static(path.join(__dirname,'/public')));
 
 
 //Partials y HBS
-hbs.registerPartials(path.join(__dirname,'/views/parciales'));
-app.set('view engine', 'hbs');
+//hbs.registerPartials(path.join(__dirname,'/views/parciales'));
+app.set('view engine', 'ejs');
 
 // Configuracion global de rutas
 app.use(require('./routes'))
