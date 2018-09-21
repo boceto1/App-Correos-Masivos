@@ -8,13 +8,30 @@ var transport = nodemailer.createTransport({
     }
 });
 
+
+let generarListaCorreos = async (destinatarios) =>{
+
+    let correos = destinatarios.split(',');
+
+    let respuesta = "";
+
+    correos.forEach(correo => {
+        respuesta+=`<${correo}>,`
+    });
+
+    return respuesta;
+}
+
 let enviarCorreo =  async (destinarios,asunto,texto) => {
+
+
+    let correos = await generarListaCorreos(destinarios);
 
         var msg = {
             text: texto,
             createTextFromHtml: true,
             from: `<${process.env.CORREO}>`,
-            to: `<${destinarios}>`,
+            to: correos,
             subject: asunto
           };
 
@@ -22,7 +39,6 @@ let enviarCorreo =  async (destinarios,asunto,texto) => {
 
             
             if (err) {
-                console.log(err);
               return {
                   ok:false,
                   err

@@ -1,5 +1,7 @@
 
 const express = require('express');
+const Usuario = require('../models/usuario')
+
 const app = express()
 
 app.get('/', (req, res)=> {
@@ -15,5 +17,7 @@ app.get('/registro', (req, res)=> {
         titulo:"Registro | APP CORREROS"
     })
 })
+
+
 
 module.exports = app;

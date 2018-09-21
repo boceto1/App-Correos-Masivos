@@ -103,9 +103,9 @@ app.post('/api/enviarCorreo',async (req, res) => {
 
     let respuestaEnvio = await enviarCorreo(correo.destinatarios,correo.asunto,correo.texto);
     
-    console.log(respuestaEnvio);
     res.json({
-        message:"Algo se hizo"
+        ok:true,
+        message:"Proceso realizado con éxito"
     })
 
 });
